@@ -1,0 +1,11 @@
+Resume_Cognizant.pdf
+*.old
+clients/
+p?.jpg
+resources/
+profile_picture_base.jpg
+profile_picture_base_cropped.png
+profile_image_circle.png
+welcome-banner.jpg
+logo/
+.DS_Store
