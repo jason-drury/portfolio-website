@@ -269,21 +269,26 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 }
 .single-about-add-info p {font-weight:  300;border:  0;padding: 0;margin-top: 3px;}
 /*.single-about-txt*/
-
+ 
 /*.single-about-img */
-.single-about-img{position: relative;box-shadow: 0 5px 20px rgba(14,25,80,.30);}
+.single-about-img{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-shadow: 0 5px 20px rgba(14,25,80,.30);
+}
 .single-about-img:before {
     position:  absolute;
     content: " ";
     top: 0;
     left:  0;
-    width: 109%;
+    width: 100%;
     height:  100%;
     background: rgba(31,44,108,.3);
 }
 .single-about-img img {
-    max-width: 500px;
-    height: 468px;
+    max-width: 100%;
+    height: auto;
 }
 .about-list-icon{
     display: flex;
@@ -292,7 +297,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 109%;
+    width: 100%;
     height: 90px;
     background: #1f2c6c;
 }
@@ -331,6 +336,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 .education {
     background:  #f9fbfd;
     padding-top:  50px;
+    border-top: 1px solid #e5ebf2;
 }
 .education-horizontal-timeline {
     padding: 80px 0;
@@ -591,83 +597,104 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 .single-profile:hover .profile-icon-name,.single-profile:hover .profile-txt a>i{color: #fff;}
 .single-profile:hover .profile-border {border:transparent;}
+
 /*-------------------------------------
         a. Certifications
 --------------------------------------*/
+
+/* Certifications Section */
 .certifications {
-    background:  #f9fbfd;
-    padding:  50px 0 100px;
-    border:  1px solid #e5ebf2;
+    background: #f9fbfd; /* Background color */
+    padding: 50px 0 100px; /* Padding (top, right/left, bottom) */
+    border-top: 1px solid #e5ebf2; /* Border with color */
+    text-align: center; /* Center text within the certifications section */
 }
 
-.certifications-content {padding-top: 100px;}
+/* Certifications Content Container */
+.certifications-content {
+    padding-top: 100px; /* Top padding */
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the items horizontally */
+}
 
 /* ---- .item ---- */
+
 .isotope:after {
-    content: '';
+    content: ''; /* Create a clearfix */
     display: block;
     clear: both;
 }
+
+/* Certification Item */
 .isotope .item {
-    position:relative;
-    overflow:hidden;
-    margin-bottom: 30px;
+    height: 90%;
+    position:relative; /* Relative positioning */
+    overflow:visible; /* Hide overflowing content */
+    margin: 0 15px 30px; /* Margin (top, right/left, bottom) */
+    flex: 0 0 calc(33.333% - 30px); /* Flexbox properties for item width and spacing */
 }
-/*.item img*/
+
+/* Certification Item Image */
 .isotope .item img{
-    width:100%;
-    height:100%;
-    -webkit-transition: .5s;
+    height: 100%; /* Set a fixed height for all item images */
+    object-fit: contain; /* Ensure the image covers the entire container */
+    -webkit-transition: .5s; /* Transition properties for a smooth effect */
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
 }
+
+/* Hover Effect on Certification Item Image */
 .isotope .item:hover  img{
-    -webkit-transform:scale(1.5);
+    -webkit-transform:scale(1.5); /* Scale the image on hover */
     -moz-transform:scale(1.5);
     -ms-transform:scale(1.5);
     -o-transform:scale(1.5);
     transform:scale(1.5);
-}/*.item img*/
+}
 
-/*.isotope-overlay*/
+/* Isotope Overlay for Certification Item */
 .isotope-overlay{
-    position:absolute;
-    height:100%;
-    width:100%;
-    background:rgba(31,44,108,.5);
-    display:flex;
-    align-items:center;
-    text-transform: uppercase;
-    justify-content:center;
-    flex-direction:row;
-    -webkit-transform:scale(0);
+    position:absolute; /* Absolute positioning */
+    height:100%; /* 100% height of the container */
+    width:100%; /* 100% width of the container */
+    background:rgba(31,44,108,.5); /* Background color with alpha (transparency) */
+    display:flex; /* Use flexbox layout */
+    align-items:center; /* Center vertically */
+    text-transform: uppercase; /* Convert text to uppercase */
+    justify-content:center; /* Center horizontally */
+    flex-direction:row; /* Display as a row */
+    -webkit-transform:scale(0); /* Initial scale (hidden) */
     -moz-transform:scale(0);
     -ms-transform:scale(0);
     -o-transform:scale(0);
     transform:scale(0);
-    -webkit-transition: .5s;
+    -webkit-transition: .5s; /* Transition properties for a smooth effect */
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
 }
+
+/* Isotope Overlay Link Styles */
 .isotope-overlay a {
-    display: inline-block;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
+    display: inline-block; /* Display as an inline block */
+    color: #fff; /* Text color */
+    font-size: 14px; /* Font size */
+    text-align: center; /* Center text */
 }
+
+/* Hover Effect on Isotope Overlay */
 .isotope .item:hover .isotope-overlay{
-    -webkit-transform:scale(1);
+    -webkit-transform:scale(1); /* Scale the overlay on hover */
     -moz-transform:scale(1);
     -ms-transform:scale(1);
     -o-transform:scale(1);
     transform:scale(1);
-    top:0;
-}/*.isotope-overlay*/
-
+    top:0; /* Align to the top */
+}
 /*-------------------------------------
         9. Portfolio
 --------------------------------------*/
